@@ -122,14 +122,26 @@ em {
 body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto 2rem;
+  grid-template-rows: 3rem auto 2rem;
   grid-template-areas:
+    "header header header header"
     "content content content content"
     "footer__left footer__center footer__center footer__right";
   grid-row-gap: 0.5rem;
   justify-items: start;
   align-items: center;
   place-content: stretch;
+  height: 100vh;
+}
+
+body.title-page {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto 2rem;
+  grid-template-areas:
+    "content content content content"
+    "footer__left footer__center footer__center footer__right";
+  justify-items: center;
+
 }
 
 header,
@@ -141,13 +153,17 @@ main,
 }
 
 header {
-  grid-area: footer__left;
+  grid-area: header;
+  place-self: center;
 }
 
 main {
   grid-area: content;
   place-self: start;
-  padding-top: 0.5rem;
+}
+
+.title-page main {
+  place-self: center;
 }
 
 .footer__left {
@@ -168,9 +184,19 @@ main {
 // Presentation layer
 h1 {
   color: $grey;
-  font-size: 0.5rem;
-  font-weight: light;
+  font-size: 1.5rem;
   line-height: 1;
+
+  &.title--start-page {
+  color: $black;
+  font-size: 3rem;
+  text-align: center;
+  }
+}
+
+h5.subtitle--start_page {
+  margin-top: 2rem;
+  text-align: center;
 }
 
 p {
@@ -214,7 +240,16 @@ ul {
 }
 
 .icon {
+  max-height: 1em;
+  width: auto;
   margin-left: 0.4rem;
+
+  svg {
+    max-height: 1em;
+    width: auto;
+    fill: currentColor;
+    vertical-align: text-bottom;
+  }
 }
 
 .icon:first-child {
