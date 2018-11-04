@@ -125,6 +125,9 @@ p {
   .container.red {
     background: #FF4136;
     color: #85144B; }
+  .container.maroon {
+    background: #85144B;
+    color: #eb7ab1; }
   .container.grey {
     background: #AAAAAA;
     color: #111111; }
@@ -156,12 +159,19 @@ p {
   .tag.red {
     background: #FF4136;
     color: #85144B; }
+  .tag.maroon {
+    background: #85144B;
+    color: #eb7ab1; }
   .tag.grey {
     background: #AAAAAA;
     color: #111111; }
   .tag.silver {
     background: #DDDDDD;
     color: #111111; }
+
+.container:last-child,
+.tag:last-child {
+  margin-bottom: 0.1rem; }
 
 ul {
   padding-left: 0.75rem; }

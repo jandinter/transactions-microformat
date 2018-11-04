@@ -58,6 +58,11 @@ $max-container-width: 900px;
     color: $maroon;
   }
 
+  &.maroon {
+    background: $maroon;
+    color: #eb7ab1;
+  }
+
   &.grey {
     background: $grey;
     color: $black;
@@ -234,6 +239,11 @@ p {
 
   @include colors;
 
+}
+
+.container:last-child,
+.tag:last-child {
+  margin-bottom: 0.1rem;
 }
 
 ul {
